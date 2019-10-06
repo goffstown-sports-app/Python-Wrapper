@@ -38,32 +38,105 @@ def GET_SECTION(section_name, section):
 class ghsApp():
 
     def __init__(self, section):
+        """Sets section to dbSection for use across all methods
+        
+        Arguments:
+            section {[type]} -- [description]
+        
+        Raises:
+            Exception: [description]
+        """
         if "/" != list(section)[0] and "" != list(section)[0]:
             colored_warning = colored("Make sure path is exact", "red")
             raise Exception(colored_warning)
         else:
             self.dbSection = section
 
+    #############################################################################
+    #############################################################################
+
     def calendarEvents(self):
+        """Gets a list of all the events that the app collects from the school calendar.
+        We don't collect events that have to do with the following:
+        1. Middle school events
+        2. Practices
+        3. Scrimmages
+        4. Sports that isn't one of the following:
+            1. Soccer
+            2. Football
+            3. Baseball
+            4. Softball
+            5. Field Hockey
+            6. Volleyball
+            7. Basketball
+            8. Lacrosse
+        If response comes back as {} then there are no events for today
+        
+        Returns:
+            dict -- response from calendar events
+        """
         return GET_SECTION("calendarEvents", self)
 
+    #############################################################################
+    #############################################################################
+
     def monitoringInfo(self):
+        """Gets a list of all the monitoring information.
+        The monitoring info section of the database is meta data set there
+        by each micro service. The Server Monitor program then takes that data
+        and uses it to monitor the other micro services. Each micro service has
+        the following meta data set for it:
+        1. If maintainers should be emailed if the micro service goes down
+        2. The time that the server monitor micro service will send an email
+        if the micro service isn't on until then.
+        3. How often the micro service should update in the database
+        
+        Returns:
+            dict -- response from monitoring information
+        """
         return GET_SECTION("monitoringInfo", self)
 
+    #############################################################################
+    #############################################################################
+    
     def statuses(self):
+        """Get a list of the statuses for each micro service for the ghs app.
+        Each micro service has the following information for it's status:
+        1. Last time online
+        2. Last time offline
+        3. If online (bool)
+        
+        Returns:
+            dict -- response from statuses section
+        """
         return GET_SECTION("statuses", self)
+
+    #############################################################################
+    #############################################################################
 
     def fieldInfo(self):
         return GET_SECTION("fieldInfo", self)
 
+    #############################################################################
+    #############################################################################
+
     def scores(self):
         return GET_SECTION("scores", self)
 
+    #############################################################################
+    #############################################################################
+
     def footballFieldInfo(self):
         return GET_SECTION("footballFieldInfo", self)
-    
+
+    #############################################################################
+    #############################################################################
+
     def gymInfo(self):
         return GET_SECTION("gymInfo", self)
-    
+
+    #############################################################################
+    #############################################################################
+
     def softballFieldInfo(self):
         return GET_SECTION("softballFieldInfo", self)
