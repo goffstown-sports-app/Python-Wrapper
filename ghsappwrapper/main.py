@@ -1,18 +1,27 @@
 import requests
 from termcolor import colored
 
-locations = {
-    "calendarEvents": "/calendar/tday-section",
-    "monitoringInfo": "/db-info/monitoring",
-    "statuses": "/db-info/statuses",
-    "fieldInfo": "/field-information",
-    "scores": "/scores",
-    "footballFieldInfo": "/field-information/field-status/football-field",
-    "gymInfo": "/field-information/field-status/gym"
-}
-
-
 def GET_SECTION(section_name, section):
+    """Make response to database and clean it
+    
+    Arguments:
+        section_name {string} -- name of the section to select from locations dict
+        section {sting} -- specific section to get from inside section. If root of section than just put ""
+    
+    Returns:
+        object -- response from request to section
+    """
+    
+    locations = {
+        "calendarEvents": "/calendar/tday-section",
+        "monitoringInfo": "/db-info/monitoring",
+        "statuses": "/db-info/statuses",
+        "fieldInfo": "/field-information",
+        "scores": "/scores",
+        "footballFieldInfo": "/field-information/field-status/football-field",
+        "gymInfo": "/field-information/field-status/gym"
+    }
+    
     full_url = "https://ghs-app-5a0ba.firebaseio.com" + \
         locations[section_name] + section + ".json"
     headers = {
