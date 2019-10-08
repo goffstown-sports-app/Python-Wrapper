@@ -1,11 +1,10 @@
 import requests
 
-def GET_SECTION(section_name, section):
+def GET_SECTION(section_name):
     """Make response to database and clean it
     
     Arguments:
         section_name {string} -- name of the section to select from locations dict
-        section {sting} -- specific section to get from inside section. If root of section than just put ""
     
     Returns:
         object -- response from request to section
@@ -13,16 +12,15 @@ def GET_SECTION(section_name, section):
     
     locations = {
         "calendarEvents": "/calendar/tday-section",
-        "monitoringInfo": "/db-info/monitoring",
-        "statuses": "/db-info/statuses",
         "fieldInfo": "/field-information",
         "scores": "/scores",
         "footballFieldInfo": "/field-information/field-status/football-field",
-        "gymInfo": "/field-information/field-status/gym"
+        "gymInfo": "/field-information/field-status/gym",
+        "softballFieldInfo": "/field-information/field-status/softball-field"
     }
     
     full_url = "https://ghs-app-5a0ba.firebaseio.com" + \
-        locations[section_name] + section + ".json"
+        locations[section_name] + ".json"
     headers = {
         "Content-Type": "application/json"
     }
@@ -35,21 +33,6 @@ def GET_SECTION(section_name, section):
 
 
 class ghsApp():
-
-    def __init__(self, section):
-        """Sets section to dbSection for use across all methods
-        
-        Arguments:
-            section {[type]} -- [description]
-        
-        Raises:
-            Exception: [description]
-        """
-        if "/" != list(section)[0] and "" != list(section)[0]:
-            colored_warning = colored("Make sure path is exact", "red")
-            raise Exception(colored_warning)
-        else:
-            self.dbSection = section
 
     #############################################################################
     #############################################################################
@@ -74,41 +57,7 @@ class ghsApp():
         Returns:
             dict -- response from calendar events
         """
-        return GET_SECTION("calendarEvents", self)
-
-    #############################################################################
-    #############################################################################
-
-    def monitoringInfo(self):
-        """Gets a list of all the monitoring information.
-        The monitoring info section of the database is meta data set there
-        by each micro service. The Server Monitor program then takes that data
-        and uses it to monitor the other micro services. Each micro service has
-        the following meta data set for it:
-        1. If maintainers should be emailed if the micro service goes down
-        2. The time that the server monitor micro service will send an email
-        if the micro service isn't on until then.
-        3. How often the micro service should update in the database
-        
-        Returns:
-            dict -- response from monitoring information
-        """
-        return GET_SECTION("monitoringInfo", self)
-
-    #############################################################################
-    #############################################################################
-    
-    def statuses(self):
-        """Get a list of the statuses for each micro service for the ghs app.
-        Each micro service has the following information for it's status:
-        1. Last time online
-        2. Last time offline
-        3. If online (bool)
-        
-        Returns:
-            dict -- response from statuses section
-        """
-        return GET_SECTION("statuses", self)
+        return GET_SECTION("calendarEvents")
 
     #############################################################################
     #############################################################################
@@ -130,7 +79,7 @@ class ghsApp():
         Returns:
             dict -- response from field-information section
         """
-        return GET_SECTION("fieldInfo", self)
+        return GET_SECTION("fieldInfo")
 
     #############################################################################
     #############################################################################
@@ -141,7 +90,7 @@ class ghsApp():
         Returns:
             dict -- response from field-information/football-field section
         """
-        return GET_SECTION("footballFieldInfo", self)
+        return GET_SECTION("footballFieldInfo")
 
     #############################################################################
     #############################################################################
@@ -152,7 +101,7 @@ class ghsApp():
         Returns:
             dict -- response from field-information/gym section
         """
-        return GET_SECTION("gymInfo", self)
+        return GET_SECTION("gymInfo")
 
     #############################################################################
     #############################################################################
@@ -163,4 +112,4 @@ class ghsApp():
         Returns:
             dict -- response from field-information/softball-field section
         """
-        return GET_SECTION("softballFieldInfo", self)
+        return GET_SECTION("softballFieldInfo")
