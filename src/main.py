@@ -114,6 +114,3 @@ class ghsApp():
             dict -- response from field-information/softball-field section
         """
         return GET_SECTION("softballFieldInfo")
-
-
-ghsApp().softballFieldInfo()

@@ -1,7 +1,7 @@
 import sys
 
 sys.path.append("..")
-from ghsapp import ghsApp
+from main import ghsApp
 
 def test_calendarEvents():
     result = ghsApp().calendarEvents()
