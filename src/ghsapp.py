@@ -1,15 +1,16 @@
 import requests
 
+
 def GET_SECTION(section_name):
     """Make response to database and clean it
-    
+
     Arguments:
         section_name {string} -- name of the section to select from locations dict
-    
+
     Returns:
         object -- response from request to section
     """
-    
+
     locations = {
         "calendarEvents": "/calendar/tday-section",
         "fieldInfo": "/field-information",
@@ -18,7 +19,7 @@ def GET_SECTION(section_name):
         "gymInfo": "/field-information/field-status/gym",
         "softballFieldInfo": "/field-information/field-status/softball-field"
     }
-    
+
     full_url = "https://ghs-app-5a0ba.firebaseio.com" + \
         locations[section_name] + ".json"
     headers = {
@@ -53,7 +54,7 @@ class ghsApp():
             7. Basketball
             8. Lacrosse
         If response comes back as {} then there are no events for today
-        
+
         Returns:
             dict -- response from calendar events
         """
@@ -68,14 +69,14 @@ class ghsApp():
         1. Football Field
         2. Gym
         3. Softball Field
-        
+
         For each field there is the following information:
         1. Current sport on that field (or last sport if vision program is off)
         2. Current away team name (or last away team name if vision program is off)
         3. Start time for current game (or last game if vision program is off)
         4. If the current game is varsity or jv (last game if vision program is off)
         5. Current home game score and away game score (last game scores if the vision program is off)
-        
+
         Returns:
             dict -- response from field-information section
         """
@@ -86,7 +87,7 @@ class ghsApp():
 
     def footballFieldInfo(self):
         """Field information just for the football field
-        
+
         Returns:
             dict -- response from field-information/football-field section
         """
@@ -97,7 +98,7 @@ class ghsApp():
 
     def gymInfo(self):
         """Field information just for the gym
-        
+
         Returns:
             dict -- response from field-information/gym section
         """
@@ -108,8 +109,11 @@ class ghsApp():
 
     def softballFieldInfo(self):
         """Field information just for the softball field
-        
+
         Returns:
             dict -- response from field-information/softball-field section
         """
         return GET_SECTION("softballFieldInfo")
+
+
+ghsApp().softballFieldInfo()
