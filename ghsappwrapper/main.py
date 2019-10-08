@@ -1,5 +1,4 @@
 import requests
-from termcolor import colored
 
 def GET_SECTION(section_name, section):
     """Make response to database and clean it
