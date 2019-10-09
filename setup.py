@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
     name='ghsAppWrapper',         # How you named your package folder (MyLib)
     packages=['ghsAppWrapper'],   # Chose the same as "name"
-    version='0.2',      # Start with a small number and increase it with every change you make
+    version='0.3',      # Start with a small number and increase it with every change you make
     # Chose a license from here: https://help.github.com/articles/licensing-a-repository
     license='MIT',
     # Give a short description about your library
@@ -11,7 +11,7 @@ setup(
     author_email='matthewgleich@gmail.com',      # Type in your E-Mail
     # Provide either the link to your github or to your website
     url='https://github.com/goffstown-sports-app/ghsAppWrapper',
-    download_url='https://github.com/goffstown-sports-app/ghsAppWrapper/archive/v_02.tar.gz',
+    download_url='https://github.com/goffstown-sports-app/ghsAppWrapper/archive/v_03.tar.gz',
     # Keywords that define your package best
     keywords=['goffstown', 'sports', 'wrapper', 'app', 'api', 'high-school'],
     install_requires=[
