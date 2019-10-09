@@ -14,7 +14,7 @@ setup(
     # I explain this later on
     download_url='https://github.com/goffstown-sports-app/ghsAppWrapper/archive/v_01.tar.gz',
     # Keywords that define your package best
-    keywords=['goffstown', 'sports', 'wrapper', 'app', 'api', 'high school'],
+    keywords=['goffstown', 'sports', 'wrapper', 'app', 'api', 'high-school'],
     install_requires=[            # I get to this in a second
         'requests',
     ],
