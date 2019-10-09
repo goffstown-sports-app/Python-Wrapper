@@ -14,4 +14,4 @@ Like any other package in python, import the ghsAppWrapper package by putting th
 
 ## Methods
 
-To find the available methods, go into the `/src/main.py` file and look at the methods inside the ghsApp class.
+To find the available methods, go into the `/ghsAppWrapper/main.py` file and look at the methods inside the ghsApp class.

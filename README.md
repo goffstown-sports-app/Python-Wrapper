@@ -15,4 +15,4 @@ You can install the ghsAppWrapper by using the following command:
 
 ## Examples and Docs
 
-To see examples and the docs, look in the `docs` folder and in `./src/main.py`
+To see examples and the docs, look in the `docs` folder and in `./ghsAppWrapper/main.py`
