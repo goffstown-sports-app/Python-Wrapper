@@ -1,4 +1,4 @@
-# Python-Wrapper
+# Python-Wrapper ![PyPI](https://img.shields.io/pypi/v/ghsAppWrapper)
 
 ## Github Actions
 
