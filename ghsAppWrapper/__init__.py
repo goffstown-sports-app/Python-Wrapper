@@ -1,1 +1,1 @@
-from main import ghsApp
+from .main import ghsApp
