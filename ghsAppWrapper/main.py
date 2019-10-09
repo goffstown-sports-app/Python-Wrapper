@@ -12,7 +12,7 @@ def GET_SECTION(section_name):
     """
 
     locations = {
-        "calendarEvents": "/calendar/tday-section",
+        "calendarEvents": "/calendar/tday-events",
         "fieldInfo": "/field-information",
         "scores": "/scores",
         "footballFieldInfo": "/field-information/field-status/football-field",
