@@ -11,11 +11,10 @@ setup(
     author_email='matthewgleich@gmail.com',      # Type in your E-Mail
     # Provide either the link to your github or to your website
     url='https://github.com/goffstown-sports-app/ghsAppWrapper',
-    # I explain this later on
     download_url='https://github.com/goffstown-sports-app/ghsAppWrapper/archive/v_01.tar.gz',
     # Keywords that define your package best
     keywords=['goffstown', 'sports', 'wrapper', 'app', 'api', 'high-school'],
-    install_requires=[            # I get to this in a second
+    install_requires=[
         'requests',
     ],
     classifiers=[
