@@ -11,7 +11,7 @@ setup(
     author_email='matthewgleich@gmail.com',      # Type in your E-Mail
     # Provide either the link to your github or to your website
     url='https://github.com/goffstown-sports-app/ghsAppWrapper',
-    download_url='https://github.com/goffstown-sports-app/ghsAppWrapper/archive/v_01.tar.gz',
+    download_url='https://github.com/goffstown-sports-app/ghsAppWrapper/archive/v_02.tar.gz',
     # Keywords that define your package best
     keywords=['goffstown', 'sports', 'wrapper', 'app', 'api', 'high-school'],
     install_requires=[
@@ -24,8 +24,7 @@ setup(
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
         'License :: OSI Approved :: MIT License',   # Again, pick a license
-        # Specify which pyhton versions that you want to support
-        'Programming Language :: Python :: 3.5',
+        # Specify which python versions that you want to support
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
