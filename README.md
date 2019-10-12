@@ -1,5 +1,7 @@
 # Python-Wrapper ![PyPI](https://img.shields.io/pypi/v/ghsAppWrapper)
 
+![PyPI - Downloads](https://img.shields.io/pypi/dm/ghsAppWrapper)
+
 ## Github Actions
 
 | Action                                                                                                                                                                                      | Action Description                       |
